@@ -3,6 +3,31 @@ const app = express();   //creates an Express application object.
 
 const port = 8080;  //(8080 or 3000)custom servers
 
+//EJS as the templating engine
+app.set("view engine", "ejs");
+
+
+//Rendering index.ejs
+
+//Parsing data to ejs
+app.get("/rolldice", (req, res) => {
+    let num = Math.floor(Math.random() * 6 + 1);   // any random number between 1 to 6
+    res.render("index.ejs", {num});
+});
+
+//if-else in ejs
+app.get("/age", (req, res) => {
+    let age = 19;
+    res.render("index.ejs", {age});
+});
+
+//loop in ejs
+app.get("/followers", (req, res) => {
+    let followers = ["John", "Alice", "Leo", "James"];
+    res.render("index.ejs", {followers});
+});
+
+//---------------------------------
 
 
 //Query String (req.query) "search/?fruit=apple"

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+</head>
+<body>
+    <h1>Home page using ejs templating</h1>
+
+    <!-- Uncomment this to execute "/rolldice" route -->
+    <!-- <p>Roll dice value : <%= //num %></p> -->
+
+
+    <!-- Uncomment this to execute "/age" route -->
+    <!-- <p>Age = <% //age %></p> -->
+    <!-- <% //if(age >= 18) {%>
+        <p>Adult</p>    
+    <% //} else { %>
+        <p>Not an adult.</p>
+    <% //} %> -->
+
+
+    <!-- "/followers" route -->
+    <ul>
+        <h5>Followers list :</h5>
+        <% for(names of followers) {%>
+            <li><%= names %></li>
+        <% } %>
+    </ul>
+
+</body>
+</html>
