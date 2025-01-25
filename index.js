@@ -1,13 +1,17 @@
 const express = require("express");
 const app = express();   //creates an Express application object.
-
+let path = require("path");
 const port = 8080;  //(8080 or 3000)custom servers
+
+//middleware for serving static files
+app.use(express.static(path.join(__dirname, "public")));  //by default searches for public folder
 
 //EJS as the templating engine
 app.set("view engine", "ejs");
+//Views folder : Dynamic content rendering
 
 
-//Rendering index.ejs
+//----------Rendering index.ejs----------------
 
 //Parsing data to ejs
 app.get("/rolldice", (req, res) => {
